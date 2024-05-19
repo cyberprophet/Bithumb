@@ -17,7 +17,7 @@ public class WebSocket : ShareWebSocket<TickerEventArgs>
     /// type: 구독 메시지 종류("ticker" / "transaction" / "orderbookdepth")
     /// (optional)tickTypes: tick 종류 ("30M"/"1H"/"12H"/"24H"/"MID")
     /// </summary>
-    public async Task RequestAsync(string type, string[] symbols, params string[] tickTypes)
+    public async Task RequestAsync(string type, IEnumerable<string> symbols, params string[] tickTypes)
     {
         await base.RequestAsync(JsonConvert.SerializeObject(new
         {
