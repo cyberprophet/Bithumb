@@ -67,8 +67,15 @@ public class WebSocket : ShareWebSocket<TickerEventArgs>
                 if (string.IsNullOrEmpty(jToken.Value<string>("status")))
                 {
                     OnReceiveTicker(str);
+
+                    continue;
                 }
-                Console.WriteLine(jToken);
+                Console.WriteLine(new
+                {
+                    CryptoExchange = nameof(Bithumb),
+                    DateTime.Now,
+                    Response = jToken
+                });
             }
             catch (Exception exception)
             {
@@ -79,6 +86,12 @@ public class WebSocket : ShareWebSocket<TickerEventArgs>
 #endif
             }
         }
+        Console.WriteLine(new
+        {
+            CryptoExchange = nameof(Bithumb),
+            DateTime.Now,
+            Socket = Socket.State
+        });
     }
 
     public override async Task ConnectAsync(string? token = null, TimeSpan? interval = null)
