@@ -6,9 +6,9 @@ namespace ShareInvest.Bithumb.EventHandler;
 
 public class TickerEventArgs(string json) : EventArgs
 {
-    public RealTicker? Ticker
+    public TickerContent? Ticker
     {
         get;
     }
-        = JsonConvert.DeserializeObject<RealTicker>(json);
+        = JsonConvert.DeserializeObject<RealTicker>(json)?.Content;
 }

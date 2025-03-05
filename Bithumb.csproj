@@ -15,7 +15,7 @@
 		<PackageTags>crypto,trading,api,shareinvest,bithumb</PackageTags>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-		<Version>1.0.0.1</Version>
+		<Version>1.0.0.3</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -30,7 +30,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="ShareInvest.Crypto" Version="1.0.0" />
+		<ProjectReference Include="..\Crypto\Crypto.csproj" />
 	</ItemGroup>
 
 </Project>
